@@ -2,6 +2,7 @@ const router = require('express').Router();
 const asyncHandler = require('express-async-handler');
 
 const limitKeys = require('../../utils/middleware/limitPermittedKeys');
+const stripFalsyKeys = require('../../utils/middleware/stripFalsyKeys');
 
 router.post(
   '/',
@@ -21,6 +22,7 @@ router.post(
     'page',
     'per_page'
   ),
+  stripFalsyKeys(),
   asyncHandler(async (req, res) => {
     const { body } = req;
 
