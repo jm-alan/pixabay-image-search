@@ -28,6 +28,15 @@ router.post(
 
     let queryString = `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}`;
 
+    if (!body.q || (body.q.length > 100)) {
+      return res.status(400).json({
+        errors: [
+          'Bad search term',
+          'A search term must be provided, and must 100 characters or less, including spaces'
+        ]
+      });
+    }
+
     for (const key in body) {
       queryString += `&${key}=${encodeURIComponent(body[key])}`;
     }
