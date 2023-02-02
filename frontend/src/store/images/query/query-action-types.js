@@ -1,0 +1,14 @@
+export const QUERY = 'search/QUERY';
+export const LANGUAGE = 'search/LANGUAGE';
+export const TOGGLE_ID = 'search/TOGGLE_ID';
+export const IMAGE_TYPE = 'search/IMAGE_TYPE';
+export const ORIENTATION = 'search/ORIENTATION';
+export const CATEGORY = 'search/CATEGORY';
+export const MIN_WIDTH = 'search/MIN_WIDTH';
+export const MAX_WIDTH = 'search/MAX_WIDTH';
+export const COLORS = 'search/COLORS';
+export const TOGGLE_EDITORS_CHOICE = 'search/TOGGLE_EDITORS_CHOICE';
+export const TOGGLE_SAFE_SEARCH = 'search/TOGGLE_SAFE_SEARCH';
+export const TOGGLE_ORDER = 'search/ORDER';
+export const PAGE = 'search/PAGE';
+export const PER_PAGE = 'search/PER_PAGE';
