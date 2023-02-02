@@ -31,7 +31,9 @@ router.post(
 
     let queryString = `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}`;
 
-    if (!body.q || (body.q.length > 100)) {
+    body.q ||= '';
+
+    if (body.q.length > 100) {
       return res.status(400).json({
         errors: [
           'Bad search term',
