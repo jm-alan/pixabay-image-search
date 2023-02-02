@@ -1,11 +1,13 @@
 #search-results-container {
+  --result-container-padding-vertical: 1rem;
+  --result-container-padding-horizontal: 5rem;
   --result-container-width: 100vw;
-  --result-container-height: 90vh;
-  --result-container-interior-width: calc(100vw - 5rem);
-  --result-container-interior-height: calc(90vh - 5rem);
+  --result-container-height: 80vh;
+  --result-container-interior-width: calc(var(--result-container-width) - (2 * var(--result-container-padding-horizontal)));
+  --result-container-interior-height: calc(var(--result-container-height) - (2 * var(--result-container-padding-vertical)));
   height: var(--result-container-height);
   width: var(--result-container-width);
-  padding: 5rem;
+  padding: var(--result-container-padding-vertical) var(--result-container-padding-horizontal);
   overflow-y: auto;
   overflow-x: hidden;
   display: flex;
