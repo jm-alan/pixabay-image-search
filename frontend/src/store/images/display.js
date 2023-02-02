@@ -42,8 +42,6 @@ export const getResults = query => async dispatch => {
     resetTimer
   } = await csrfetch.post('/api/queries/', query);
 
-  console.log(hits);
-
   dispatch(setResults(hits));
   dispatch(setTotal(total));
   dispatch(setHits(totalHits));

@@ -12,7 +12,6 @@ export default function Search () {
 
   const handleSearch = e => {
     e.preventDefault();
-    console.log('you searched!');
     dispatch(setQueryText(query));
     dispatch(enableSearch());
   };

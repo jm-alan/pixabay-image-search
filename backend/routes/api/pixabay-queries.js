@@ -63,8 +63,6 @@ router.post(
       queryString += `&${key}=${encodeURIComponent(body[key])}`;
     }
 
-    console.log('Generated querystring: ', queryString);
-
     const response = await fetch(queryString);
     const rateLimit = response.headers.get('X-RateLimit-Limit');
     const requestsRemaining = response.headers.get('X-RateLimit-Remaining');
