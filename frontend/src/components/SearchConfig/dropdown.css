@@ -1,0 +1,69 @@
+.custom-dropdown {
+  --dropdown-width: calc((var(--config-container-interior-width) / 10));
+  --dropdown-height: var(--config-container-interior-height);
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--dropdown-width);
+  height: var(--dropdown-height);
+  background-color: var(--root-highlight-color);
+  overflow: hidden;
+  border-radius: 0.425rem;
+  color: black;
+  transition:
+    height 0.2s;
+}
+
+.custom-dropdown.expanded {
+  height: calc(var(--dropdown-height) * 6);
+}
+
+.dropdown-selected {
+  cursor: pointer;
+  height: var(--dropdown-height);
+  min-height: var(--dropdown-height);
+  max-height: var(--dropdown-height);
+  width: var(--dropdown-width);
+  min-width: var(--dropdown-width);
+  max-width: var(--dropdown-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.dropdown-items {
+  --scrollable-items-height: calc(var(--dropdown-height) * 5);
+  --scrollable-items-width: var(--dropdown-width);
+  height: var(var(--scrollable-items-height));
+  width: var(--scrollable-items-width);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropdown-item {
+  cursor: pointer;
+  width: calc(var(--scrollable-items-width) * 0.8);
+  height: calc(var(--dropdown-height) * 0.4);
+  min-height: calc(var(--dropdown-height) * 0.4);
+  max-height: calc(var(--dropdown-height) * 0.4);
+  border-radius: 0.425rem;
+  margin: 0.3rem 0px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-item:hover {
+  background-color: var(--active-highlight);
+}
+
+.dropdown-item.selected {
+  background-color: var(--active-highlight);
+}
