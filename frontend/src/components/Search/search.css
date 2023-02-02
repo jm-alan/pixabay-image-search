@@ -1,0 +1,32 @@
+#searchbar-container {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#searchbar {
+  --searchbar-width: 80vw;
+  --searchbar-height: 5vh;
+  width: var(--searchbar-width);
+  height: var(--searchbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.2rem solid var(--root-highlight-color);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+#searchbar-text {
+  width: calc(var(--searchbar-width) * .9);
+  height: var(--searchbar-height);
+  padding: 0px 1rem;
+  font-size: 1rem;
+}
+
+#searchbar-submit {
+  width: calc(var(--searchbar-width) * .1);
+  height: var(--searchbar-height);
+}

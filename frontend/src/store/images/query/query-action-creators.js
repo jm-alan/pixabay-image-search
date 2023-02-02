@@ -1,8 +1,6 @@
 /* eslint-disable camelcase */
 import * as types from './query-action-types';
 
-export const selectImage = {};
-
 export const setQueryText = q => ({
   type: types.QUERY,
   q

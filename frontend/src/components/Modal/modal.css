@@ -12,10 +12,18 @@
 #modal-content {
   position: relative;
   background-color: var(--root-highlight-color);
+  --modal-padding: 2rem;
+  --modal-width: 80vw;
+  --modal-height: 80vh;
+  --modal-interior-width: calc(var(--modal-width) - (2 * var(--modal-padding)));
+  --modal-interior-height: calc(var(--modal-height) - (2 * var(--modal-padding)));
   overflow: hidden;
   border-radius: 0.425rem;
-  height: 50vh;
-  width: 80vw;
+  height: var(--modal-height);
+  width: var(--modal-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-floater {

@@ -1,0 +1,55 @@
+#search-results-container {
+  --result-container-width: 100vw;
+  --result-container-height: 90vh;
+  --result-container-interior-width: calc(100vw - 5rem);
+  --result-container-interior-height: calc(90vh - 5rem);
+  height: var(--result-container-height);
+  width: var(--result-container-width);
+  padding: 5rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.search-result {
+  --search-result-padding: 1rem;
+  --search-result-height: calc(var(--result-container-height) / 3);
+  --search-result-width: calc(var(--result-container-interior-width) / 8);
+  --search-result-interior-width: calc(var(--search-result-width) - (2 * var(--search-result-padding)));
+  --search-result-interior-height: calc(var(--search-result-height) - (2 * var(--search-result-padding)));
+  --search-result-min-width: 20rem;
+  --search-result-min-height: 20rem;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--search-result-padding);
+  width: var(--search-result-width);
+  max-width: var(--search-result-width);
+  height: var(--search-result-height);
+  max-height: var(--search-result-height);
+  min-width: var(--search-result-min-width);
+  min-height: var(--search-result-min-height);
+}
+
+.search-result-thumbnail {
+  object-fit: cover;
+  border-radius: 0.5rem;
+  height: var(--search-result-interior-height);
+  max-height: var(--search-result-interior-height);
+  width: var(--search-result-interior-width);
+  max-width: var(--search-result-interior-width);
+  min-height: calc(var(--search-result-min-height) - (2 * var(--search-result-padding)));
+  min-width: calc(var(--search-result-min-width) - (2 * var(--search-result-padding)));
+  outline: var(--search-result-padding) solid transparent;
+  transition:
+    outline 0.1s;
+}
+
+.search-result:hover>.search-result-thumbnail {
+  outline: var(--search-result-padding) solid var(--root-highlight-color);
+}

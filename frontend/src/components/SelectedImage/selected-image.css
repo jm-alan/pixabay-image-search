@@ -1,0 +1,88 @@
+#selected {
+  --selected-height: var(--modal-interior-height);
+  --selected-width: var(--modal-interior-width);
+  height: var(--selected-height);
+  width: var(--selected-width);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#selected-image {
+  height: calc(var(--selected-height) * 0.75);
+  min-height: calc(var(--selected-height) * 0.75);
+  max-height: calc(var(--selected-height) * 0.75);
+  border-radius: 0.425rem;
+  width: var(--selected-width);
+  object-fit: cover;
+}
+
+#selected-details {
+  display: flex;
+  height: calc(var(--selected-height) * 0.25);
+  min-height: calc(var(--selected-height) * 0.25);
+  max-height: calc(var(--selected-height) * 0.25);
+}
+
+#selected-tags {
+  width: 60vw;
+  --tags-container-height: calc(var(--selected-height) * 0.25);
+  --tags-container-width: calc(var(--selected-width) * 0.75);
+  height: var(--tags-container-height);
+  width: var(--tags-container-width);
+  min-height: calc(var(--selected-height) * 0.25);
+  max-height: calc(var(--selected-height) * 0.25);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.image-tag {
+  background-color: black;
+  height: calc(var(--tags-container-height) * 0.3);
+  width: calc(var(--tags-container-width) * 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0.425rem;
+  font-size: 2rem;
+}
+
+#selected-user {
+  --user-container-padding: 1rem;
+  --user-container-height: calc(var(--selected-height) * 0.25);
+  --user-container-width: calc(var(--selected-width) * 0.25);
+  --user-container-interior-width: calc(var(--user-container-width) - (2 * var(--user-container-padding)));
+  --user-container-interior-height: calc(var(--user-container-height) - (2 * var(--user-container-padding)));
+  overflow: hidden;
+  padding: var(--user-container-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--user-container-height);
+  width: var(--user-container-width);
+}
+
+#selected-user>img {
+  border-radius: 0.425rem;
+  height: calc(var(--user-container-interior-height) * 0.775);
+  width: var(--user-container-interior-width);
+  object-fit: cover;
+}
+
+#user-name {
+  background-color: black;
+  font-size: 1.25rem;
+  border-radius: 0.425rem;
+  height: calc(var(--user-container-interior-height) * 0.2);
+  width: var(--user-container-interior-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
