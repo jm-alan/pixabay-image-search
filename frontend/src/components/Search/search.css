@@ -23,7 +23,8 @@
   width: calc(var(--searchbar-width) * .9);
   height: var(--searchbar-height);
   padding: 0px 1rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 #searchbar-submit {
