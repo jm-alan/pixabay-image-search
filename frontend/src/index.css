@@ -1,0 +1,80 @@
+:root {
+  --mobile-scale: 3 / 7;
+  --root-highlight-color: hsl(6, 77%, 57%);
+  --navbar-height: 5vh;
+  --above-navbar: calc(100vh - var(--navbar-height));
+  --active-highlight: hsl(6, 77%, 80%);
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+  color: var(--root-highlight-color);
+  font-size: 0.75rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Google Sans';
+}
+
+*:is(:active, :focus),
+*::before:is(:active, :focus),
+*::after:is(:active, :focus) {
+  outline: none;
+}
+
+.clickable:active {
+  color: white !important;
+  background-color: var(--active-highlight);
+}
+
+button {
+  --button-padding: 0.75rem;
+  --button-margin: 0rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  border: none;
+  color: black;
+  background-color: var(--root-highlight-color);
+  font-size: 0.425rem;
+  padding: var(--button-padding);
+  margin: var(--button-margin);
+  transition:
+    padding 0.05s,
+    margin 0.05s;
+}
+
+button:not(:disabled):active {
+  margin: calc(var(--button-margin) + 0.25rem);
+  padding: calc(var(--button-padding) - 0.25rem);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background-color: grey;
+  color: black;
+}
+
+#main {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#router-container {
+  height: var(--above-navbar);
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
