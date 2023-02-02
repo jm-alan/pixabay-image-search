@@ -14,7 +14,7 @@
   max-height: calc(var(--selected-height) * 0.75);
   border-radius: 0.425rem;
   width: var(--selected-width);
-  object-fit: cover;
+  object-fit: contain;
 }
 
 #selected-details {
@@ -44,6 +44,9 @@
   background-color: black;
   height: calc(var(--tags-container-height) * 0.3);
   width: calc(var(--tags-container-width) * 0.25);
+  min-width: min-content;
+  max-width: min-content;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
