@@ -4,7 +4,7 @@
   "description": "NodeJS / ExpressJS backend project starter",
   "main": "bin/www",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "scripts": {
     "start": "per-env",
