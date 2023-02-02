@@ -3,7 +3,7 @@ import * as types from './query-action-types';
 
 export const selectImage = {};
 
-export const setQuery = q => ({
+export const setQueryText = q => ({
   type: types.QUERY,
   q
 });
@@ -37,9 +37,9 @@ export const setMinWidth = min_width => ({
   min_width
 });
 
-export const setMaxWidth = max_width => ({
-  type: types.MAX_WIDTH,
-  max_width
+export const setMaxWidth = min_height => ({
+  type: types.MIN_HEIGHT,
+  min_height
 });
 
 export const setColors = colors => ({
@@ -67,4 +67,12 @@ export const setPage = page => ({
 export const setPerPage = per_page => ({
   type: types.PER_PAGE,
   per_page
+});
+
+export const enableSearch = () => ({
+  type: types.ENABLE
+});
+
+export const disableSearch = () => ({
+  type: types.DISABLE
 });

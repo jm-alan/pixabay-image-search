@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { clearModal, hideModal } from '../../store/UX/modal';
-import { useLogger } from '../../utils/logging';
 import LoadingLock from '../Loading/LoadingLock';
 
 import './modal.css';
@@ -37,8 +36,6 @@ export default function Modal () {
       document.removeEventListener('keydown', handleEscape);
     };
   }, [dispatch]);
-
-  useLogger({ showModal, onClose, Current });
 
   return showModal && Current && createPortal(
     <div

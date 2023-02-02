@@ -63,6 +63,8 @@ router.post(
       queryString += `&${key}=${encodeURIComponent(body[key])}`;
     }
 
+    console.log('Generated querystring: ', queryString);
+
     const response = await fetch(queryString);
     const rateLimit = response.headers.get('X-RateLimit-Limit');
     const requestsRemaining = response.headers.get('X-RateLimit-Remaining');
@@ -90,7 +92,7 @@ router.post(
 
     const data = await response.json();
 
-    data.hits = data.hits.indexedBy('id');
+    data.hits = data.hits.indexed('id');
 
     res.json({ data, rateLimit, requestsRemaining, resetTimer });
   }));

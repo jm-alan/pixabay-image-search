@@ -5,6 +5,7 @@ import TempLoadingPruner from './components/TempLoadingPruner';
 import Lazy from './components/Loading/Lazy';
 
 import './index.css';
+import QueryTrigger from './components/QueryTrigger';
 
 const Home = lazy(() => import('./components/Home'));
 const Modal = lazy(() => import('./components/Modal'));
@@ -32,6 +33,7 @@ export default function App () {
         </Lazy>
       </BrowserRouter>
       <TempLoadingPruner />
+      <QueryTrigger />
     </>
   );
 }

@@ -29,10 +29,10 @@ const Root = () => {
 
   return (
     <>
-      <Lazy>
+      <Lazy name='error banner'>
         <ErrorBanner />
       </Lazy>
-      <Lazy>
+      <Lazy name='core app'>
         <App />
       </Lazy>
       <PageLoading />

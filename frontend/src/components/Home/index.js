@@ -1,7 +1,14 @@
 import React from 'react';
+import Search from '../Search';
+import SearchResults from '../SearchResults';
+
+import './home.css';
 
 export default function Home () {
   return (
-    <h1>Home</h1>
+    <div id='home-container'>
+      <Search />
+      <SearchResults />
+    </div>
   );
 }
