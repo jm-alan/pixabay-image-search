@@ -4,6 +4,9 @@ const asyncHandler = require('express-async-handler');
 const limitKeys = require('../../utils/middleware/limitPermittedKeys');
 const stripFalsyKeys = require('../../utils/middleware/stripFalsyKeys');
 
+const validColors = ['grayscale', 'transparent', 'red', 'orange', 'yellow', 'green', 'turquoise', 'blue', 'lilac', 'pink', 'white', 'gray', 'black', 'brown'];
+const validColorSet = new Set(validColors);
+
 router.post(
   '/',
   limitKeys(
@@ -36,6 +39,20 @@ router.post(
         ]
       });
     }
+
+    body.colors ??= [];
+
+    if (!Array.isArray(body.colors) || !body.colors.every(color => validColorSet.has(color))) {
+      return res.status(400).json({
+        errors: [
+          'Invalid query configuration',
+          'Colors must be an array of strings, whose valid values are, exhaustively, as follows:',
+          validColors.join(', ')
+        ]
+      });
+    }
+
+    body.colors = body.colors.join(',');
 
     for (const key in body) {
       queryString += `&${key}=${encodeURIComponent(body[key])}`;
