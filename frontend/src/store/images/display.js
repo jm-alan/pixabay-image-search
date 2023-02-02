@@ -48,7 +48,7 @@ export const getResults = query => async dispatch => {
 };
 
 export default function reducer (
-  state = { results: {}, total: 0, hits: 0, current: null },
+  state = { results: null, total: 0, hits: 0, current: null },
   { type, results, total, hits, selectedID }
 ) {
   switch (type) {

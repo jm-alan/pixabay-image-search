@@ -8,7 +8,7 @@ import './search-results.css';
 export default function SearchResults () {
   const results = useSelector(state => state.images.display.results);
 
-  return (
+  return results && (
     <div id='search-results-container'>
       {Object.entries(results).map(([id, { webformatURL }]) => (
         <SearchResult key={id} id={id} src={webformatURL} />
