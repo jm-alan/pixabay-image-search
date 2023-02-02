@@ -1,7 +1,7 @@
 :root {
   --mobile-scale: 3 / 7;
   --root-highlight-color: hsl(6, 77%, 57%);
-  --navbar-height: 5vh;
+  --navbar-height: 0vh;
   --above-navbar: calc(100vh - var(--navbar-height));
   --active-highlight: hsl(6, 77%, 80%);
 }
@@ -30,11 +30,6 @@ body {
   outline: none;
 }
 
-.clickable:active {
-  color: white !important;
-  background-color: var(--active-highlight);
-}
-
 button {
   --button-padding: 0.75rem;
   --button-margin: 0rem;
@@ -48,12 +43,8 @@ button {
   margin: var(--button-margin);
   transition:
     padding 0.05s,
-    margin 0.05s;
-}
-
-button:not(:disabled):active {
-  margin: calc(var(--button-margin) + 0.25rem);
-  padding: calc(var(--button-padding) - 0.25rem);
+    margin 0.05s,
+    background-color 0.2s;
 }
 
 button:disabled {
