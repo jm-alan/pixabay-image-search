@@ -5,6 +5,8 @@ const TOTAL = 'display/TOTAL';
 const HITS = 'display/HITS';
 const SELECT = 'display/SELECT';
 const DESELECT = 'display/DESELECT';
+const LOAD = 'display/LOAD';
+const UNLOAD = 'display/UNLOAD';
 
 const setResults = results => ({
   type: RESULTS,
@@ -30,7 +32,17 @@ export const deselectImage = () => ({
   type: DESELECT
 });
 
+export const load = () => ({
+  type: LOAD
+});
+
+export const unload = () => ({
+  type: UNLOAD
+});
+
 export const getResults = query => async dispatch => {
+  dispatch(unload());
+
   const {
     data: {
       total,
@@ -45,10 +57,11 @@ export const getResults = query => async dispatch => {
   dispatch(setResults(hits));
   dispatch(setTotal(total));
   dispatch(setHits(totalHits));
+  dispatch(load());
 };
 
 export default function reducer (
-  state = { results: null, total: 0, hits: 0, current: null },
+  state = { results: {}, total: 0, hits: 0, current: null, loaded: false },
   { type, results, total, hits, selectedID }
 ) {
   switch (type) {
@@ -76,6 +89,16 @@ export default function reducer (
       return {
         ...state,
         current: null
+      };
+    case LOAD:
+      return {
+        ...state,
+        loaded: true
+      };
+    case UNLOAD:
+      return {
+        ...state,
+        laoded: false
       };
     default:
       return state;
