@@ -54,6 +54,11 @@ router.post(
 
     body.colors = body.colors.join(',');
 
+    if (body.id) {
+      body.id = body.q;
+      delete body.q;
+    }
+
     for (const key in body) {
       queryString += `&${key}=${encodeURIComponent(body[key])}`;
     }
@@ -84,6 +89,8 @@ router.post(
     // Otherwise, we're good to parse the response
 
     const data = await response.json();
+
+    data.hits = data.hits.indexedBy('id');
 
     res.json({ data, rateLimit, requestsRemaining, resetTimer });
   }));
