@@ -98,7 +98,7 @@ export default function reducer (
     case UNLOAD:
       return {
         ...state,
-        laoded: false
+        loaded: false
       };
     default:
       return state;
