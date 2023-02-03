@@ -53,8 +53,9 @@ export const toggleSafeSearch = () => ({
   type: types.TOGGLE_SAFE_SEARCH
 });
 
-export const toggleOrder = () => ({
-  type: types.TOGGLE_ORDER
+export const setOrder = order => ({
+  type: types.ORDER,
+  order
 });
 
 export const setPage = page => ({

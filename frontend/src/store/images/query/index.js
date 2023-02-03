@@ -125,12 +125,12 @@ export default function reducer (
           safesearch: !state.configuration.safesearch
         }
       };
-    case types.TOGGLE_ORDER:
+    case types.ORDER:
       return {
         ...state,
         configuration: {
           ...state.configuration,
-          order: state.configuration.order === 'popular' ? 'latest' : 'popular'
+          order
         }
       };
     case types.PAGE:
