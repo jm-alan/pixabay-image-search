@@ -1,5 +1,5 @@
 .custom-dropdown {
-  --dropdown-width: calc((var(--config-container-interior-width) / 10));
+  --dropdown-width: calc((var(--config-container-interior-width) / 12));
   --dropdown-height: var(--config-container-interior-height);
   z-index: 1;
   overflow: hidden;
