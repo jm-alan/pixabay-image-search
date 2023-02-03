@@ -14,15 +14,15 @@ export default function SearchResults () {
   const loaded = useSelector(state => state.images.display.loaded);
 
   useEffect(() => {
-    // if (!loaded) {
-    //   dispatch(lockLoading('search results'));
-    // } else {
-    //   dispatch(unlockLoading('search results'));
-    // }
+    if (!loaded) {
+      dispatch(lockLoading('search results'));
+    } else {
+      dispatch(unlockLoading('search results'));
+    }
   }, [dispatch, loaded]);
 
   useEffect(() => {
-    // dispatch(enableSearch());
+    dispatch(enableSearch());
   }, [dispatch]);
 
   return (
