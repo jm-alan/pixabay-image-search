@@ -8,6 +8,7 @@
   align-items: center;
   width: var(--dropdown-width);
   height: var(--dropdown-height);
+  max-height: calc(var(--dropdown-height) * 6);
   background-color: var(--root-highlight-color);
   overflow: hidden;
   border-radius: 0.425rem;
