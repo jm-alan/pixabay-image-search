@@ -1,0 +1,14 @@
+#search-config {
+  --config-container-width: 100vw;
+  --config-container-height: 10vh;
+  --config-container-padding-vertical: 2rem;
+  --config-container-padding-horizontal: 2rem;
+  --config-container-interior-width: calc(var(--config-container-width) - (2 * var(--config-container-padding-horizontal)));
+  --config-container-interior-height: calc(var(--config-container-height) - (2 * var(--config-container-padding-vertical)));
+  width: var(--config-container-width);
+  height: var(--config-container-height);
+  padding: var(--config-container-padding-vertical) var(--config-container-padding-horizontal);
+  display: flex;
+  justify-content: space-evenly;
+  outline: 5px solid var(--root-highlight-color);
+}
